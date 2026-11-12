@@ -22,11 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
 DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "localhost"),
+    "host": os.getenv("DB_HOST"),
     "port": int(os.getenv("DB_PORT", "5432")),
     "database": os.getenv("DB_NAME"),
     "user": os.getenv("DB_USER"),
     "password": os.getenv("DB_PASSWORD"),
+    "ssl": "require",
 }
 
 CATEGORIES_PATH = BASE_DIR / "categories.json"
